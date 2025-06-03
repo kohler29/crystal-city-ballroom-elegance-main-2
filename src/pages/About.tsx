@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, Clock, Users, Music, Camera, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import ScrollAnimation from "@/components/ScrollAnimation";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -59,81 +60,60 @@ const About = () => {
       <div className="py-20">
         <div className="container mx-auto px-4">
           {/* History Section */}
-          <motion.div 
-            className="max-w-4xl mx-auto mb-24"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
-          >
+          <ScrollAnimation className="max-w-4xl mx-auto mb-24" delay={0.2}>
             <div className="prose max-w-none">
-              <motion.div 
-                className="text-center mb-16"
-                {...fadeInUp}
-              >
+              <ScrollAnimation className="text-center mb-16" delay={0.3}>
                 <h2 className="text-4xl font-playfair font-bold text-gray-800 mb-6">Sejarah dan Filosofi</h2>
                 <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
-              </motion.div>
+              </ScrollAnimation>
               
-              <motion.p 
-                className="text-gray-700 text-lg leading-relaxed mb-8"
-                {...fadeInUp}
-              >
-                Crystal Ballroom Season City didirikan pada tahun 2015 dengan visi untuk menjadi venue acara premium di Jakarta Barat. 
-                Terinspirasi oleh ballroom klasik Eropa dengan sentuhan modern, kami menciptakan ruang yang elegan namun tetap hangat 
-                untuk berbagai acara penting dalam hidup Anda.
-              </motion.p>
+              <ScrollAnimation delay={0.4}>
+                <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                  Crystal Ballroom Season City didirikan pada tahun 2015 dengan visi untuk menjadi venue acara premium di Jakarta Barat. 
+                  Terinspirasi oleh ballroom klasik Eropa dengan sentuhan modern, kami menciptakan ruang yang elegan namun tetap hangat 
+                  untuk berbagai acara penting dalam hidup Anda.
+                </p>
+              </ScrollAnimation>
               
-              <motion.p 
-                className="text-gray-700 text-lg leading-relaxed mb-8"
-                {...fadeInUp}
-              >
-                Filosofi kami adalah memberikan pengalaman tak terlupakan melalui perhatian pada detail, layanan prima, dan 
-                fleksibilitas untuk memenuhi kebutuhan unik setiap klien. Nama "Crystal" melambangkan kejelasan visi kami dalam 
-                mewujudkan impian klien serta kemewahan yang kami tawarkan.
-              </motion.p>
+              <ScrollAnimation delay={0.5}>
+                <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                  Filosofi kami adalah memberikan pengalaman tak terlupakan melalui perhatian pada detail, layanan prima, dan 
+                  fleksibilitas untuk memenuhi kebutuhan unik setiap klien. Nama "Crystal" melambangkan kejelasan visi kami dalam 
+                  mewujudkan impian klien serta kemewahan yang kami tawarkan.
+                </p>
+              </ScrollAnimation>
               
-              <motion.div 
-                className="text-center mt-16"
-                {...fadeInUp}
-              >
+              <ScrollAnimation className="text-center mt-16" delay={0.6}>
                 <h2 className="text-4xl font-playfair font-bold text-gray-800 mb-6">Lokasi Strategis</h2>
                 <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
-              </motion.div>
+              </ScrollAnimation>
               
-              <motion.p 
-                className="text-gray-700 text-lg leading-relaxed"
-                {...fadeInUp}
-              >
-                Berlokasi di pusat Season City Mall, Jakarta Barat, Crystal Ballroom menawarkan akses mudah dari berbagai 
-                area di Jakarta dan kota satelit. Dengan area parkir luas dan akses ke berbagai fasilitas mall, lokasi kami 
-                menjadi pilihan ideal untuk acara Anda.
-              </motion.p>
+              <ScrollAnimation delay={0.7}>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Berlokasi di pusat Season City Mall, Jakarta Barat, Crystal Ballroom menawarkan akses mudah dari berbagai 
+                  area di Jakarta dan kota satelit. Dengan area parkir luas dan akses ke berbagai fasilitas mall, lokasi kami 
+                  menjadi pilihan ideal untuk acara Anda.
+                </p>
+              </ScrollAnimation>
             </div>
-          </motion.div>
+          </ScrollAnimation>
           
           {/* Facilities Section */}
-          <motion.div 
-            className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-12 mb-24 shadow-xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <motion.div 
-              className="text-center mb-16"
-              {...fadeInUp}
-            >
+          <ScrollAnimation className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-12 mb-24 shadow-xl" delay={0.3}>
+            <ScrollAnimation className="text-center mb-16" delay={0.4}>
               <h2 className="text-4xl font-playfair font-bold text-gray-800 mb-6">Fasilitas Unggulan</h2>
               <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
               <p className="text-gray-600 text-lg max-w-3xl mx-auto">
                 Kami menyediakan fasilitas premium untuk memastikan acara Anda berjalan sempurna
               </p>
-            </motion.div>
+            </ScrollAnimation>
             
             <motion.div 
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               variants={staggerContainer}
               initial="initial"
-              animate="animate"
+              whileInView="animate"
+              viewport={{ once: true }}
             >
               {[
                 {
@@ -167,14 +147,10 @@ const About = () => {
                   description: "Tersedia area parkir luas yang dapat menampung ratusan kendaraan tamu Anda."
                 }
               ].map((facility, index) => (
-                <motion.div
+                <ScrollAnimation
                   key={index}
+                  delay={0.1 * index}
                   className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                  variants={fadeInUp}
-                  whileHover={{ 
-                    scale: 1.03,
-                    transition: { duration: 0.2 }
-                  }}
                 >
                   <div className="flex items-center mb-6">
                     <motion.div 
@@ -187,29 +163,21 @@ const About = () => {
                     <h3 className="font-playfair font-bold text-2xl text-gray-800">{facility.title}</h3>
                   </div>
                   <p className="text-gray-600 text-lg leading-relaxed">{facility.description}</p>
-                </motion.div>
+                </ScrollAnimation>
               ))}
             </motion.div>
-          </motion.div>
+          </ScrollAnimation>
           
           {/* Team Section */}
-          <motion.div 
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
-          >
-            <motion.div 
-              className="mb-16"
-              {...fadeInUp}
-            >
+          <ScrollAnimation className="text-center max-w-4xl mx-auto" delay={0.3}>
+            <ScrollAnimation className="mb-16" delay={0.4}>
               <h2 className="text-4xl font-playfair font-bold text-gray-800 mb-6">Tim Profesional</h2>
               <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
               <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
                 Tim kami terdiri dari profesional berpengalaman yang siap membantu Anda merencanakan dan melaksanakan acara 
                 sempurna. Dari koordinator acara hingga staf teknis, kami berkomitmen memberikan layanan terbaik.
               </p>
-            </motion.div>
+            </ScrollAnimation>
             
             <motion.div 
               className="flex justify-center"
@@ -224,7 +192,7 @@ const About = () => {
                 <Sparkles className="ml-2 h-5 w-5" />
               </a>
             </motion.div>
-          </motion.div>
+          </ScrollAnimation>
         </div>
       </div>
       

@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { motion, AnimatePresence } from "framer-motion";
+import ScrollAnimation from "@/components/ScrollAnimation";
 
 // Gallery images with categories
 const galleryItems = [
@@ -160,60 +161,59 @@ const Gallery = () => {
       
       <div className="py-20 pt-32 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <ScrollAnimation>
             <h1 className="text-4xl md:text-5xl font-playfair font-bold text-center mb-4">Galeri</h1>
             <p className="text-gray-700 text-center max-w-3xl mx-auto mb-10">
               Lihat bagaimana Crystal Ballroom telah menjadi bagian dari momen spesial klien kami. 
               Telusuri galeri kami untuk mendapatkan inspirasi untuk acara Anda.
             </p>
-          </motion.div>
+          </ScrollAnimation>
           
           {/* Search and Filter Section */}
-          <div className="mb-10 space-y-4">
-            <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
-              <div className="w-full md:w-1/3">
-                <input
-                  type="text"
-                  placeholder="Cari acara..."
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
+          <ScrollAnimation delay={0.2}>
+            <div className="mb-10 space-y-4">
+              <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
+                <div className="w-full md:w-1/3">
+                  <input
+                    type="text"
+                    placeholder="Cari acara..."
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </div>
+                <div className="flex gap-4">
+                  <select
+                    className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold"
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value as "date" | "title")}
+                  >
+                    <option value="date">Urutkan berdasarkan Tanggal</option>
+                    <option value="title">Urutkan berdasarkan Judul</option>
+                  </select>
+                </div>
               </div>
-              <div className="flex gap-4">
-                <select
-                  className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold"
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as "date" | "title")}
-                >
-                  <option value="date">Urutkan berdasarkan Tanggal</option>
-                  <option value="title">Urutkan berdasarkan Judul</option>
-                </select>
+              
+              <div className="flex flex-wrap gap-2 justify-center">
+                {categories.map((category, index) => (
+                  <ScrollAnimation key={category.id} delay={0.1 * index}>
+                    <motion.button
+                      onClick={() => setSelectedCategory(category.id)}
+                      className={`px-4 py-2 rounded-full transition-all ${
+                        selectedCategory === category.id 
+                          ? "bg-gold text-white shadow-lg scale-105" 
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      }`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {category.label}
+                    </motion.button>
+                  </ScrollAnimation>
+                ))}
               </div>
             </div>
-            
-            <div className="flex flex-wrap gap-2 justify-center">
-              {categories.map(category => (
-                <motion.button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-full transition-all ${
-                    selectedCategory === category.id 
-                      ? "bg-gold text-white shadow-lg scale-105" 
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {category.label}
-                </motion.button>
-              ))}
-            </div>
-          </div>
+          </ScrollAnimation>
           
           {/* Gallery Grid */}
           <AnimatePresence mode="wait">
@@ -229,61 +229,66 @@ const Gallery = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {filteredGallery.map(item => (
-                  <motion.div 
-                    key={item.id}
-                    className="overflow-hidden rounded-lg shadow-md cursor-pointer transition-all hover:shadow-xl"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => openImageDialog(item)}
-                  >
-                    <div className="relative h-64">
-                      <img 
-                        src={item.image} 
-                        alt={item.title}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        width={800}
-                        height={600}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div className="p-4 w-full text-white">
-                          <h3 className="font-playfair font-bold text-lg">{item.title}</h3>
-                          <p className="text-sm capitalize mb-2">{item.category}</p>
-                          <p className="text-sm opacity-90">{item.description}</p>
-                          <p className="text-xs mt-2">{new Date(item.date).toLocaleDateString('id-ID', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}</p>
+                {filteredGallery.map((item, index) => (
+                  <ScrollAnimation key={item.id} delay={0.1 * index}>
+                    <motion.div 
+                      className="overflow-hidden rounded-lg shadow-md cursor-pointer transition-all hover:shadow-xl"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => openImageDialog(item)}
+                    >
+                      <div className="relative h-64">
+                        <img 
+                          src={item.image} 
+                          alt={item.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          width={800}
+                          height={600}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                          <div className="p-4 w-full text-white">
+                            <h3 className="font-playfair font-bold text-lg">{item.title}</h3>
+                            <p className="text-sm capitalize mb-2">{item.category}</p>
+                            <p className="text-sm opacity-90">{item.description}</p>
+                            <p className="text-xs mt-2">{new Date(item.date).toLocaleDateString('id-ID', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            })}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </ScrollAnimation>
                 ))}
               </motion.div>
             )}
           </AnimatePresence>
           
           {filteredGallery.length === 0 && (
-            <div className="text-center py-10">
-              <p className="text-gray-500 text-lg">Tidak ada acara yang ditemukan.</p>
-            </div>
+            <ScrollAnimation>
+              <div className="text-center py-10">
+                <p className="text-gray-500 text-lg">Tidak ada acara yang ditemukan.</p>
+              </div>
+            </ScrollAnimation>
           )}
           
-          <div className="text-center mt-12">
-            <p className="text-gray-700 mb-6">
-              Tertarik mengadakan acara Anda di Crystal Ballroom? Hubungi kami untuk konsultasi gratis.
-            </p>
-            <motion.a 
-              href="/contact" 
-              className="btn-gold inline-block"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Konsultasi Gratis
-            </motion.a>
-          </div>
+          <ScrollAnimation delay={0.3}>
+            <div className="text-center mt-12">
+              <p className="text-gray-700 mb-6">
+                Tertarik mengadakan acara Anda di Crystal Ballroom? Hubungi kami untuk konsultasi gratis.
+              </p>
+              <motion.a 
+                href="/contact" 
+                className="btn-gold inline-block"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Konsultasi Gratis
+              </motion.a>
+            </div>
+          </ScrollAnimation>
         </div>
       </div>
       
