@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
@@ -31,16 +32,19 @@ const testimonials = [
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [direction, setDirection] = useState(0);
 
   const handlePrev = () => {
     if (isAnimating) return;
     setIsAnimating(true);
+    setDirection(-1);
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
   };
 
   const handleNext = () => {
     if (isAnimating) return;
     setIsAnimating(true);
+    setDirection(1);
     setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
   };
 
@@ -60,70 +64,157 @@ const TestimonialsSection = () => {
     return () => clearInterval(interval);
   }, [currentIndex, isAnimating]);
 
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    })
+  };
+
+  const buttonVariants = {
+    hover: { scale: 1.1, backgroundColor: "#D4AF37" },
+    tap: { scale: 0.95 }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-r from-gold-light via-white to-gold-light">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="section-title">Testimonials</h2>
           <p className="text-gray-700 max-w-3xl mx-auto">
             Dengarkan pengalaman dari klien-klien kami yang telah mempercayakan acara spesial mereka pada Crystal Ballroom.
           </p>
-        </div>
+        </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="overflow-hidden rounded-lg shadow-lg bg-white">
-            <div className="flex flex-col md:flex-row">
-              <div className="md:w-1/3">
-                <img 
-                  src={testimonials[currentIndex].image} 
-                  alt={testimonials[currentIndex].name} 
-                  className="w-full h-full object-cover"
-                />
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div 
+              key={currentIndex}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 }
+              }}
+              className="overflow-hidden rounded-lg shadow-lg bg-white"
+            >
+              <div className="flex flex-col md:flex-row">
+                <motion.div 
+                  className="md:w-1/3"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <img 
+                    src={testimonials[currentIndex].image} 
+                    alt={testimonials[currentIndex].name} 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    width={400}
+                    height={400}
+                  />
+                </motion.div>
+                <motion.div 
+                  className="md:w-2/3 p-8 flex flex-col justify-center"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <motion.div 
+                    className="text-gold text-5xl font-serif mb-4"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    "
+                  </motion.div>
+                  <motion.p 
+                    className="italic text-gray-700 mb-6 text-lg"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                  >
+                    {testimonials[currentIndex].quote}
+                  </motion.p>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                  >
+                    <h4 className="font-playfair font-bold text-xl text-gray-800">
+                      {testimonials[currentIndex].name}
+                    </h4>
+                    <p className="text-gray-600">
+                      {testimonials[currentIndex].event} - {testimonials[currentIndex].date}
+                    </p>
+                  </motion.div>
+                </motion.div>
               </div>
-              <div className="md:w-2/3 p-8 flex flex-col justify-center">
-                <div className="text-gold text-5xl font-serif mb-4">"</div>
-                <p className="italic text-gray-700 mb-6 text-lg">
-                  {testimonials[currentIndex].quote}
-                </p>
-                <div>
-                  <h4 className="font-playfair font-bold text-xl text-gray-800">
-                    {testimonials[currentIndex].name}
-                  </h4>
-                  <p className="text-gray-600">
-                    {testimonials[currentIndex].event} - {testimonials[currentIndex].date}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </AnimatePresence>
 
-          <button 
+          <motion.button 
             onClick={handlePrev}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gold hover:text-white transition-colors"
             aria-label="Previous testimonial"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
           >
             <ArrowLeft className="h-6 w-6" />
-          </button>
+          </motion.button>
           
-          <button 
+          <motion.button 
             onClick={handleNext}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 bg-white rounded-full p-2 shadow-md hover:bg-gold hover:text-white transition-colors"
             aria-label="Next testimonial"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
           >
             <ArrowRight className="h-6 w-6" />
-          </button>
+          </motion.button>
         </div>
 
-        <div className="flex justify-center mt-6">
+        <motion.div 
+          className="flex justify-center mt-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+        >
           {testimonials.map((_, index) => (
-            <button
+            <motion.button
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => {
+                setDirection(index > currentIndex ? 1 : -1);
+                setCurrentIndex(index);
+              }}
               className={`h-3 w-3 rounded-full mx-1 transition-colors ${index === currentIndex ? 'bg-gold' : 'bg-gray-300'}`}
               aria-label={`Go to testimonial ${index + 1}`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
