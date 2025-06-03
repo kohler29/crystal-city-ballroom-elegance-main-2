@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -9,7 +8,7 @@ const testimonials = [
     date: "June 2023",
     event: "Wedding",
     quote: "Acara pernikahan kami sangat sempurna berkat Crystal Ballroom. Staf yang profesional dan dekorasinya sangat indah!",
-    image: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+    image: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 2,
@@ -17,7 +16,7 @@ const testimonials = [
     date: "March 2023",
     event: "50th Birthday",
     quote: "Suasana yang elegan dan layanan yang luar biasa. Pesta ulang tahun ke-50 saya menjadi sangat berkesan!",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80"
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 3,
@@ -25,7 +24,7 @@ const testimonials = [
     date: "December 2022",
     event: "Annual Gala",
     quote: "Crystal Ballroom menjadi pilihan tepat untuk acara gala tahunan kami. Tim manajemen sangat kooperatif dan membantu.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
   }
 ];
 

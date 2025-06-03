@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const AboutSection = () => {
@@ -25,30 +24,42 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="overflow-hidden rounded-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                  src="/weeding.jpg" 
                   alt="Crystal Ballroom Interior" 
                   className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" 
+                  loading="lazy"
+                  width={800}
+                  height={600}
                 />
               </div>
               <div className="overflow-hidden rounded-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1519741347686-c1e331fdab4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                  src="/hero.jpg" 
                   alt="Wedding Setup" 
                   className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" 
+                  loading="lazy"
+                  width={800}
+                  height={600}
                 />
               </div>
               <div className="overflow-hidden rounded-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1587825045005-c9cdef4a9af4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                  src="/Table.jpg" 
                   alt="Table Setting" 
                   className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" 
+                  loading="lazy"
+                  width={800}
+                  height={600}
                 />
               </div>
               <div className="overflow-hidden rounded-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1628244193864-0d0769884b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
+                  src="/venue.jpg"  
                   alt="Venue Details" 
                   className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" 
+                  loading="lazy"
+                  width={800}
+                  height={600}
                 />
               </div>
             </div>

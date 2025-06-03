@@ -11,7 +11,7 @@ const galleryItems = [
     id: 1,
     category: "wedding",
     title: "Pernikahan Anita & Budi",
-    image: "/public/foto/wedding.jpg",
+    image: "/foto/wedding.jpg",
     description: "Pernikahan mewah dengan tema garden wedding",
     date: "2024-03-15"
   },
@@ -20,7 +20,7 @@ const galleryItems = [
     id: 2,
     category: "ballroom",
     title: "Crystal Ballroom Main Hall",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Ruang utama ballroom dengan kapasitas hingga 1000 tamu",
     date: "2024-03-01"
   },
@@ -28,7 +28,7 @@ const galleryItems = [
     id: 3,
     category: "ballroom",
     title: "VIP Lounge Area",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Area VIP yang eksklusif untuk tamu spesial",
     date: "2024-03-01"
   },
@@ -37,7 +37,7 @@ const galleryItems = [
     id: 4,
     category: "decoration",
     title: "Dekorasi Pernikahan Modern",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Dekorasi pernikahan dengan tema modern minimalis",
     date: "2024-02-20"
   },
@@ -45,15 +45,15 @@ const galleryItems = [
     id: 5,
     category: "decoration",
     title: "Dekorasi Pernikahan Tradisional",
-    image: "/public/foto/deco.png",
+    image: "/foto/deco.png",
     description: "Dekorasi pernikahan dengan sentuhan tradisional Indonesia",
     date: "2024-02-15"
-  },  
+  },
   {
     id: 6,
     category: "decoration",
     title: "Dekorasi Corporate Event",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1112&q=80",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Dekorasi untuk acara korporat dengan tema profesional",
     date: "2024-01-10"
   },
@@ -62,7 +62,7 @@ const galleryItems = [
     id: 7,
     category: "corporate",
     title: "Annual Gala PT Global Solutions",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1112&q=80",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Acara tahunan perusahaan dengan tema futuristik",
     date: "2024-01-10"
   },
@@ -71,7 +71,7 @@ const galleryItems = [
     id: 8,
     category: "birthday",
     title: "50th Birthday Celebration",
-    image: "https://images.unsplash.com/photo-1533294455009-a6f974f65676?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    image: "https://images.unsplash.com/photo-1533294455009-a6f974f65676?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Perayaan ulang tahun ke-50 dengan tema vintage",
     date: "2024-03-01"
   },
@@ -80,7 +80,7 @@ const galleryItems = [
     id: 9,
     category: "ballroom",
     title: "Crystal Ballroom Stage",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Panggung utama dengan sistem audio dan lighting profesional",
     date: "2024-03-01"
   },
@@ -88,7 +88,7 @@ const galleryItems = [
     id: 10,
     category: "ballroom",
     title: "Crystal Ballroom Entrance",
-    image: "https://images.unsplash.com/photo-1519741347686-c1e331fdab4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    image: "https://images.unsplash.com/photo-1519741347686-c1e331fdab4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Area masuk yang megah dan elegan",
     date: "2024-03-01"
   },
@@ -97,7 +97,7 @@ const galleryItems = [
     id: 11,
     category: "decoration",
     title: "Dekorasi Birthday Party",
-    image: "/public/foto/GP.png",
+    image: "/foto/GP.png",
     description: "Dekorasi pesta ulang tahun dengan tema ceria",
     date: "2024-02-25"
   },
@@ -105,7 +105,7 @@ const galleryItems = [
     id: 12,
     category: "decoration",
     title: "Dekorasi Graduation Party",
-    image: "/public/foto/GP.png",
+    image: "/foto/GP.png",
     description: "Dekorasi pesta wisuda dengan tema akademik",
     date: "2024-02-20"
   }
@@ -242,6 +242,9 @@ const Gallery = () => {
                         src={item.image} 
                         alt={item.title}
                         className="w-full h-full object-cover"
+                        loading="lazy"
+                        width={800}
+                        height={600}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div className="p-4 w-full text-white">
@@ -297,6 +300,9 @@ const Gallery = () => {
                 src={selectedImage.image} 
                 alt={selectedImage.title} 
                 className="w-full h-auto max-h-[80vh] object-contain"
+                loading="eager"
+                width={1200}
+                height={800}
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 text-white">
                 <h3 className="font-playfair font-bold text-2xl mb-2">{selectedImage.title}</h3>

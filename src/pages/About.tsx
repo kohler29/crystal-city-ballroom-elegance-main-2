@@ -31,9 +31,12 @@ const About = () => {
           transition={{ duration: 1.5 }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
             alt="Crystal Ballroom Interior"
             className="w-full h-full object-cover"
+            loading="eager"
+            width={1200}
+            height={800}
           />
           <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
         </motion.div>
