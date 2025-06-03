@@ -54,7 +54,7 @@ const galleryItems = [
     id: 6,
     category: "decoration",
     title: "Dekorasi Corporate Event",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/foto/Dekorasi_korporat.png",
     description: "Dekorasi untuk acara korporat dengan tema profesional",
     date: "2024-01-10"
   },
@@ -63,7 +63,7 @@ const galleryItems = [
     id: 7,
     category: "corporate",
     title: "Annual Gala PT Global Solutions",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/foto/Gala.png",
     description: "Acara tahunan perusahaan dengan tema futuristik",
     date: "2024-01-10"
   },
@@ -72,7 +72,7 @@ const galleryItems = [
     id: 8,
     category: "birthday",
     title: "50th Birthday Celebration",
-    image: "https://images.unsplash.com/photo-1533294455009-a6f974f65676?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/foto/50.png",
     description: "Perayaan ulang tahun ke-50 dengan tema vintage",
     date: "2024-03-01"
   },
@@ -98,7 +98,7 @@ const galleryItems = [
     id: 11,
     category: "decoration",
     title: "Dekorasi Birthday Party",
-    image: "/foto/GP.png",
+    image: "/foto/pesta.png",
     description: "Dekorasi pesta ulang tahun dengan tema ceria",
     date: "2024-02-25"
   },
