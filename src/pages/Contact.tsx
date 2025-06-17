@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -24,12 +23,34 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
     
-    // Simulate form submission
+    // Format the message for WhatsApp
+    const message = `*Pesan Baru dari Website Crystal Ballroom*
+    
+Nama: ${formData.name}
+Email: ${formData.email}
+Telepon: ${formData.phone}
+Jenis Acara: ${formData.eventType}
+Tanggal Acara: ${formData.eventDate}
+Estimasi Tamu: ${formData.guests}
+Pesan: ${formData.message}`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // WhatsApp business number
+    const whatsappNumber = "628567209773"; // Replace with your actual WhatsApp number
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    // Open WhatsApp in new window
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success toast
     toast({
       title: "Form berhasil dikirim!",
-      description: "Tim kami akan menghubungi Anda segera.",
+      description: "Anda akan diarahkan ke WhatsApp untuk mengirim pesan.",
       duration: 5000,
     });
     
@@ -68,8 +89,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-800 mb-1">Telepon</h3>
-                    <p className="text-gray-600">+62 (21) 5436 7890</p>
-                    <p className="text-gray-600">+62 812 3456 7890 (WhatsApp)</p>
+                    <p className="text-gray-600">+62 815 8006 688 (WhatsApp)</p>
                   </div>
                 </div>
                 

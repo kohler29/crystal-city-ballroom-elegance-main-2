@@ -24,7 +24,7 @@ const weddingPackages: PackageTier[] = [
     id: "wedding-victoria",
     title: "Victoria - Crystal Ballroom",
     price: "Rp 89.000.000",
-    description: "Paket pernikahan premium dengan fasilitas lengkap termasuk gaun pengantin, foto studio, dan mobil Alphard. Tambahan per porsi Rp 105.000,- s/d Desember 2024.",
+    description: "Paket pernikahan premium dengan fasilitas lengkap",
     primaryColor: "bg-gold",
     secondaryColor: "bg-gold-light",
     recommended: true,
@@ -73,7 +73,7 @@ const weddingPackages: PackageTier[] = [
     id: "wedding-international",
     title: "International & Traditional",
     price: "Rp 58.000.000",
-    description: "Paket pernikahan lengkap dengan dekorasi internasional dan tradisional. Harga mulai Rp 58.000.000,- untuk hari Senin-Jumat (19.00-21.00). Sabtu: 11.00-13.00 (Rp 61.000.000,-), 15.00-17.00 (Rp 63.000.000,-), 19.00-21.00 (Rp 69.000.000,-). Minggu: 11.00-13.00 (Rp 63.000.000,-), 15.00-17.00 (Rp 65.000.000,-), 19.00-21.00 (Rp 69.000.000,-). Tambahan per porsi Rp 105.000,- s/d Juli 2025.",
+    description: "Paket pernikahan lengkap dengan dekorasi internasional dan tradisional.",
     primaryColor: "bg-gold",
     secondaryColor: "bg-gold-light",
     features: [
@@ -100,7 +100,7 @@ const weddingPackages: PackageTier[] = [
     id: "wedding-intimate",
     title: "Intimate Wedding",
     price: "Rp 43.000.000",
-    description: "Paket pernikahan intim dengan layanan lengkap. Harga mulai Rp 43.000.000,- untuk hari Jumat. Sabtu/Minggu/Libur: 11.00-13.00 (Rp 46.000.000,-), 15.00-17.00 (Rp 49.000.000,-), 19.00-21.00 (Rp 53.000.000,-). Tambahan per porsi Rp 105.000,- s/d Juli 2025.",
+    description: "Paket pernikahan intim dengan layanan lengkap. Harga mulai Rp 43.000.000",
     primaryColor: "bg-slate-700",
     secondaryColor: "bg-slate-100",
     features: [

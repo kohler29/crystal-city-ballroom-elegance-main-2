@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -36,10 +35,12 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="text-2xl font-playfair font-bold">
-          <span className={cn("transition-colors", isScrolled ? "text-gold" : "text-white")}>
-            Crystal Ballroom
-          </span>
+        <div className="flex items-center gap-2">
+          <img 
+            src="/logo.png" 
+            alt="Crystal Ballroom Logo" 
+            className="h-20 w-auto filter invert-[.85] sepia-[.5] saturate-[1000%] hue-rotate-[0deg] brightness-[1.05] contrast-[1.05]"
+          />
         </div>
 
         {/* Desktop Navigation */}
