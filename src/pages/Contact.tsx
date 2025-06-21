@@ -39,7 +39,7 @@ Pesan: ${formData.message}`;
     const encodedMessage = encodeURIComponent(message);
     
     // WhatsApp business number
-    const whatsappNumber = "628567209773"; // Replace with your actual WhatsApp number
+    const whatsappNumber = "628158006688"; // Replace with your actual WhatsApp number
     
     // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;

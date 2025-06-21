@@ -1,6 +1,33 @@
 User-agent: Googlebot
+# Robots.txt - Optimized for Google 2024 SEO Updates
+# Crystal Ballroom Season City
+
+User-agent: *
 Allow: /
 
+# Prioritize important pages for crawling
+Allow: /about
+Allow: /packages
+Allow: /gallery
+Allow: /testimonials
+Allow: /contact
+
+# Block unnecessary files to improve crawl budget
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Allow all image formats for better indexing
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Social media crawlers
 User-agent: Bingbot
 Allow: /
 
@@ -10,5 +37,8 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemap location
+Sitemap: https://crystal-ballroom-season-city.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

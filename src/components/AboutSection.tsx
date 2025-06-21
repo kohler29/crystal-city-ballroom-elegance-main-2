@@ -38,7 +38,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="py-20 bg-marble-light">
+    <section className="py-20 bg-marble-light" id="about" aria-labelledby="about-heading">
       <div className="container mx-auto px-4">
         <motion.div 
           className="flex flex-col md:flex-row items-center gap-12"
@@ -47,8 +47,9 @@ const AboutSection = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.div className="md:w-1/2" variants={itemVariants}>
+          <motion.article className="md:w-1/2" variants={itemVariants}>
             <motion.h2 
+              id="about-heading"
               className="section-title"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -75,30 +76,33 @@ const AboutSection = () => {
               <Link 
                 to="/about" 
                 className="text-gold font-semibold hover:underline inline-flex items-center group"
+                aria-label="Learn more about Crystal Ballroom Season City venue details"
               >
                 Pelajari Lebih Lanjut
                 <motion.span 
                   className="ml-2"
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
+                  aria-hidden="true"
                 >
                   &rarr;
                 </motion.span>
               </Link>
             </motion.div>
-          </motion.div>
-          <motion.div 
+          </motion.article>
+          <motion.aside 
             className="md:w-1/2"
             variants={containerVariants}
+            aria-label="Crystal Ballroom venue gallery"
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4" role="img" aria-label="Venue photo gallery">
               {[
-                { src: "/weeding.jpg", alt: "Crystal Ballroom Interior" },
-                { src: "/hero.jpg", alt: "Wedding Setup" },
-                { src: "/Table.jpg", alt: "Table Setting" },
-                { src: "/venue.jpg", alt: "Venue Details" }
+                { src: "/weeding.jpg", alt: "Crystal Ballroom elegant wedding ceremony setup with beautiful lighting and floral decorations", title: "Wedding Ceremony Setup" },
+                { src: "/hero.jpg", alt: "Crystal Ballroom main hall interior showing spacious venue with crystal chandeliers", title: "Main Ballroom Interior" },
+                { src: "/Table.jpg", alt: "Elegant table setting with fine dining arrangement for wedding reception at Crystal Ballroom", title: "Wedding Reception Table Setting" },
+                { src: "/venue.jpg", alt: "Crystal Ballroom venue details showcasing luxurious interior design and event space", title: "Venue Interior Details" }
               ].map((image, index) => (
-                <motion.div
+                <motion.figure
                   key={index}
                   className="overflow-hidden rounded-lg"
                   variants={imageVariants}
@@ -108,17 +112,18 @@ const AboutSection = () => {
                   <motion.img 
                     src={image.src}
                     alt={image.alt}
+                    title={image.title}
                     className="w-full h-64 object-cover"
                     loading="lazy"
-                    width={800}
-                    height={600}
+                    width={400}
+                    height={256}
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                   />
-                </motion.div>
+                </motion.figure>
               ))}
             </div>
-          </motion.div>
+          </motion.aside>
         </motion.div>
       </div>
     </section>
