@@ -12,20 +12,14 @@ services:
       - NODE_ENV=production
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:3004/health"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.crystal-ballroom.rule=Host(`your-domain.com`)"
-      - "traefik.http.routers.crystal-ballroom.entrypoints=websecure"
-      - "traefik.http.routers.crystal-ballroom.tls.certresolver=letsencrypt"
-      - "traefik.http.services.crystal-ballroom.loadbalancer.server.port=80"
     networks:
-      - web
+      - coolify
 
 networks:
-  web:
+  coolify:
     external: true
