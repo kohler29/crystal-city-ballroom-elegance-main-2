@@ -1,25 +1,23 @@
-
-import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Gallery from "./pages/Gallery";
-import Packages from "./pages/Packages";
-import Testimonials from "./pages/Testimonials";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import React, { Suspense } from "react";
+
+const Index = React.lazy(() => import("./pages/Index"));
+const About = React.lazy(() => import("./pages/About"));
+const Gallery = React.lazy(() => import("./pages/Gallery"));
+const Packages = React.lazy(() => import("./pages/Packages"));
+const Testimonials = React.lazy(() => import("./pages/Testimonials"));
+const Contact = React.lazy(() => import("./pages/Contact"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+    <Sonner />
+    <BrowserRouter>
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-xl">Loading...</div>}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -29,8 +27,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+      </Suspense>
+    </BrowserRouter>
   </QueryClientProvider>
 );
 

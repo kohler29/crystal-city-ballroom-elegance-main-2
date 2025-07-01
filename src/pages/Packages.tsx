@@ -275,7 +275,17 @@ const PackageSection = ({ title, id, packages }: { title: string, id: string, pa
   );
 };
 
+// Helper to parse price string to number
+function parsePrice(price: string): number {
+  return Number(price.replace(/[^\d]/g, ""));
+}
+
 const Packages = () => {
+  // Sort packages by price ascending
+  const sortedWedding = [...weddingPackages].sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+  const sortedBirthday = [...birthdayPackages].sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+  const sortedCorporate = [...corporatePackages].sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -314,7 +324,7 @@ const Packages = () => {
           <PackageSection 
             title="Wedding Packages" 
             id="wedding" 
-            packages={weddingPackages} 
+            packages={sortedWedding} 
           />
           
           <div className="border-t border-gray-200 my-16"></div>
@@ -322,7 +332,7 @@ const Packages = () => {
           <PackageSection 
             title="Birthday Packages" 
             id="birthday" 
-            packages={birthdayPackages} 
+            packages={sortedBirthday} 
           />
           
           <div className="border-t border-gray-200 my-16"></div>
@@ -330,7 +340,7 @@ const Packages = () => {
           <PackageSection 
             title="Corporate Packages" 
             id="corporate" 
-            packages={corporatePackages} 
+            packages={sortedCorporate} 
           />
           
           <div className="bg-marble-light rounded-lg p-8 mt-16">

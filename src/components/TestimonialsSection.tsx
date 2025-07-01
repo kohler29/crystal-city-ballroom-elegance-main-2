@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -220,4 +221,4 @@ const TestimonialsSection = () => {
   );
 };
 
-export default TestimonialsSection;
+export default React.memo(TestimonialsSection);

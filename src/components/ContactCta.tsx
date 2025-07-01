@@ -1,4 +1,4 @@
-
+import React from "react";
 import { Link } from "react-router-dom";
 import { PhoneCall, Calendar, Map } from "lucide-react";
 
@@ -54,4 +54,4 @@ const ContactCta = () => {
   );
 };
 
-export default ContactCta;
+export default React.memo(ContactCta);

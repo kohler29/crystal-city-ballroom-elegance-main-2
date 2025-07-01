@@ -12,9 +12,9 @@ const galleryItems = [
     id: 1,
     category: "wedding",
     title: "Pernikahan Anita & Budi",
-    image: "/foto/wedding.jpg",
+    image: "/foto-opt/wedding.webp",
     description: "Pernikahan mewah dengan tema garden wedding",
-    date: "2024-03-15"
+    date: "2025-03-15"
   },
   // Ballroom Category
   {
@@ -23,7 +23,7 @@ const galleryItems = [
     title: "Crystal Ballroom Main Hall",
     image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Ruang utama ballroom dengan kapasitas hingga 1000 tamu",
-    date: "2024-03-01"
+    date: "2025-03-01"
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const galleryItems = [
     title: "VIP Lounge Area",
     image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Area VIP yang eksklusif untuk tamu spesial",
-    date: "2024-03-01"
+    date: "2025-03-01"
   },
   // Decoration Category
   {
@@ -40,41 +40,41 @@ const galleryItems = [
     title: "Dekorasi Pernikahan Modern",
     image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Dekorasi pernikahan dengan tema modern minimalis",
-    date: "2024-02-20"
+    date: "2025-02-20"
   },
   {
     id: 5,
     category: "decoration",
     title: "Dekorasi Pernikahan Tradisional",
-    image: "/foto/deco.png",
+    image: "/foto-opt/deco.webp",
     description: "Dekorasi pernikahan dengan sentuhan tradisional Indonesia",
-    date: "2024-02-15"
+    date: "2025-02-15"
   },
   {
     id: 6,
     category: "decoration",
     title: "Dekorasi Corporate Event",
-    image: "/foto/Dekorasi_korporat.png",
+    image: "/foto-opt/Dekorasi_korporat.webp",
     description: "Dekorasi untuk acara korporat dengan tema profesional",
-    date: "2024-01-10"
+    date: "2025-01-10"
   },
   // Corporate Category
   {
     id: 7,
     category: "corporate",
     title: "Annual Gala PT Global Solutions",
-    image: "/foto/Gala.png",
+    image: "/foto-opt/Gala.webp",
     description: "Acara tahunan perusahaan dengan tema futuristik",
-    date: "2024-01-10"
+    date: "2025-01-10"
   },
   // Birthday Category
   {
     id: 8,
     category: "birthday",
     title: "50th Birthday Celebration",
-    image: "/foto/50.png",
+    image: "/foto-opt/50.webp",
     description: "Perayaan ulang tahun ke-50 dengan tema vintage",
-    date: "2024-03-01"
+    date: "2025-03-01"
   },
   // Ballroom Category
   {
@@ -83,32 +83,32 @@ const galleryItems = [
     title: "Crystal Ballroom Stage",
     image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     description: "Panggung utama dengan sistem audio dan lighting profesional",
-    date: "2024-03-01"
+    date: "2025-03-01"
   },
   {
     id: 10,
     category: "ballroom",
     title: "Crystal Ballroom Entrance",
-    image: "https://images.unsplash.com/photo-1519741347686-c1e331fdab4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/enterance.webp",
     description: "Area masuk yang megah dan elegan",
-    date: "2024-03-01"
+    date: "2025-03-01"
   },
   // Decoration Category
   {
     id: 11,
     category: "decoration",
     title: "Dekorasi Birthday Party",
-    image: "/foto/pesta.png",
+    image: "/foto-opt/pesta.webp",
     description: "Dekorasi pesta ulang tahun dengan tema ceria",
-    date: "2024-02-25"
+    date: "2025-02-25"
   },
   {
     id: 12,
     category: "decoration",
     title: "Dekorasi Graduation Party",
-    image: "/foto/GP.png",
+    image: "/foto-opt/GP.webp",
     description: "Dekorasi pesta wisuda dengan tema akademik",
-    date: "2024-02-20"
+    date: "2025-02-20"
   }
 ];
 

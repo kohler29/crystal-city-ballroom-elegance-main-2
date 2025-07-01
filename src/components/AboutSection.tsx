@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -97,7 +98,7 @@ const AboutSection = () => {
           >
             <div className="grid grid-cols-2 gap-4" role="img" aria-label="Venue photo gallery">
               {[
-                { src: "/weeding.jpg", alt: "Crystal Ballroom elegant wedding ceremony setup with beautiful lighting and floral decorations", title: "Wedding Ceremony Setup" },
+                { src: "/foto-opt/wedding.webp", alt: "Crystal Ballroom elegant wedding ceremony setup with beautiful lighting and floral decorations", title: "Wedding Ceremony Setup" },
                 { src: "/hero.jpg", alt: "Crystal Ballroom main hall interior showing spacious venue with crystal chandeliers", title: "Main Ballroom Interior" },
                 { src: "/Table.jpg", alt: "Elegant table setting with fine dining arrangement for wedding reception at Crystal Ballroom", title: "Wedding Reception Table Setting" },
                 { src: "/venue.jpg", alt: "Crystal Ballroom venue details showcasing luxurious interior design and event space", title: "Venue Interior Details" }
@@ -130,4 +131,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default React.memo(AboutSection);

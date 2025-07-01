@@ -1,4 +1,4 @@
-
+import React from "react";
 import { Link } from "react-router-dom";
 
 const packages = [
@@ -68,4 +68,4 @@ const PackagesSection = () => {
   );
 };
 
-export default PackagesSection;
+export default React.memo(PackagesSection);
