@@ -7,25 +7,24 @@ services:
       dockerfile: Dockerfile
     container_name: crystal-ballroom-app
     ports:
-      - "80:80"
+      - "3004:80"
     environment:
       - NODE_ENV=production
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:3004/health"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.crystal-ballroom.rule=Host(`your-domain.com`)"
-      - "traefik.http.routers.crystal-ballroom.entrypoints=websecure"
-      - "traefik.http.routers.crystal-ballroom.tls.certresolver=letsencrypt"
-      - "traefik.http.services.crystal-ballroom.loadbalancer.server.port=80"
     networks:
-      - web
+      - coolify
+    labels:
+      caddy: tripboogi.trafficorg.com
+      caddy.handle_path: /*
+      caddy.reverse_proxy: "{{upstreams 3004}}"
+      caddy.encode: gzip
 
 networks:
-  web:
+  coolify:
     external: true
